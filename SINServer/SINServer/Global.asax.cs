@@ -6,6 +6,8 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using System.Data.Entity;
+using SINServer.Models;
 
 namespace SINServer
 {
@@ -16,6 +18,8 @@ namespace SINServer
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            Database.SetInitializer(new ScoreDatabaseInitializer());
         }
     }
 }
